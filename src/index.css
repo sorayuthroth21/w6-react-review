@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap");
 
 :root {
-  --main-color: #00bdef;
-  --secondary-color: #f89738;
-  --grey-color: #c0c0c0;
-  --white-color: #ffffff;
+  --sun-color: rgba(243, 247, 7, 0.904);
+  --rain-color: rgba(7, 139, 247, 0.904);
+  --grey-color: rgba(77, 77, 77, 0.904);
+  --dark-grey-color: rgba(29, 29, 29, 0.904);
 }
 
 * {
@@ -13,103 +13,54 @@
 
 body {
   margin: 0;
-  font-family: "Quicksand", sans-serif;
+  font-family: "Raleway", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #474e4b;
-  color: #e1eeeb;
+  background: var(--grey-color);
   min-height: 100vh;
 }
 
-/*  ----------  HEADDER --------------------- */
-
-#header {
+main {
+  margin: 2rem auto;
+  padding: 0.5rem 2rem;
+  max-width: 25rem;
   text-align: center;
-  margin: 3rem auto;
+  border-radius: 6px;
+
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
-#header img {
-  width: 5rem;
-  height: 5rem;
-  object-fit: contain;
-  background-color: transparent;
+.sunny {
+  background: var(--sun-color);
 }
 
-#header h1 {
-  font-size: 1.5rem;
+.rainy {
+  background: var(--rain-color);
 }
 
-/*  ----------  SCORES CONTAINER --------------------- */
-
-.scores-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding-top: 20px;
+h1 {
+  letter-spacing: 0.1rem;
+  font-size: 1.25rem;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  color: #ffffff;
 }
 
-@media (min-width: 600px) {
-  .scores-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 912px) {
-  .scores-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 1200px) {
-  .scores-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (min-width: 1200px) {
-  .scores-container {
-    grid-template-columns: repeat(4, 1fr);
-
-   
-    margin: auto;
-  }
-}
-
-/*  ----------  SCORES CARDS --------------------- */
-
-.scores {
-  border: 1px solid var(--main-color);
-  border-radius: 15px;
-  margin: 1rem auto;
-  padding: 0.3rem;
-}
-
-.scores h1 {
-  font-size: 1.5rem;
-  text-align: center;
-  color: var(--white-color);
-}
-
-.scores table {
-  table-layout: fixed;
-  border-spacing: 0.5rem;
-  text-align: right;
-}
-
-.scores thead {
-  font-size: 1rem;
-  color: var(--white-color);
-}
-
-.scores tbody {
-  font-size: 1rem;
-  color: var(--grey-color);
-}
-
-.warning {
-  color: var(--secondary-color);
-}
-.bold{
+button {
+  padding: 0.5rem 1.5rem;
+  margin: 2rem;
+  border-radius: 4px;
+  border: 1px solid var(--grey-color);
+  background: var(--grey-color);
+  color: #e5d9f1;
+  font-family: "Raleway", sans-serif;
   font-weight: bold;
-  color : white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--dark-grey-color);
 }

@@ -1,31 +1,36 @@
-import pnLogo from "./assets/pn-logo.png";
-import Header from "./components/Header";
-
-import { HTML_RESULTS } from "./data.js";
-import { JAVA_RESULTS } from "./data.js";
-import { PYTHON_RESULTS } from "./data.js";
-import { ENGLISH_RESULTS } from "./data.js";
-import Scores from "./components/Scores.jsx";
-
+import React, { useState } from "react";
 function App() {
+  /* You will need to use a boolean state to manage the weather */
+  const[isRaining, setisRaining] = useState(true);
+ 
+  function onSunClick() {
+    // Complete this code when we click on Sunny Time
+    setisRaining(false);
+  }
+
+  function onRainClick() {
+    // Complete this code when we click on Sunny Time
+    setisRaining(true);
+  }
+
+  function getTitle() {
+    // This function manage the H1 text, depending on the weather
+    return (isRaining)? "Rain Time" : "Sun Time";
+  }
+
+  function getBackgroundColor() {
+    // This function manage the main class value, depending on the weather
+    return (isRaining) ? "rainy" : "sunny";
+
+  }
+
   return (
-    <>
-      <Header name = "Students results for PNC batch 2024"/>
-
-      <main className="scores-container">
-        <Scores courseName={"HTML"} courseResults={HTML_RESULTS}/>
-        <Scores courseName={"ENGLISH"} courseResults={ENGLISH_RESULTS}/>
-        <Scores courseName={"PYTHON"} courseResults={PYTHON_RESULTS}/>
-        <Scores courseName={"JAVA"} courseResults={JAVA_RESULTS}/>
-
-
-      </main>
-    </>
+    <main className={getBackgroundColor()}>
+      <h1>{getTitle()}</h1>
+      <button onClick={onSunClick}>Sunny Time</button>
+      <button onClick={onRainClick}>Rain Time</button>
+    </main>
   );
 }
 
 export default App;
-
-
-
-
